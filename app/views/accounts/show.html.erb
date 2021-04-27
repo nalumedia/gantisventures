@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Namelstring:</strong>
+  <%= @account.nameLstring %>
+</p>
+
+
+
+<p>
+  <strong>Horizon:</strong>
+  <%= @account.horizon %>
+</p>
+
+<p>
+  <strong>Target exit:</strong>
+  <%= @account.target_exit %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @account.notes %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>

@@ -1,0 +1,39 @@
+<%= form_with(model: account) do |form| %>
+  <% if account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+        <% account.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nameLstring %>
+    <%= form.text_field :nameLstring %>
+  </div>
+
+
+
+  <div class="field">
+    <%= form.label :horizon %>
+    <%= form.text_field :horizon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_exit %>
+    <%= form.text_field :target_exit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_area :notes %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
