@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
 
 <h1>Accounts</h1>
 
@@ -31,3 +32,7 @@
 <br>
 
 <%= link_to 'New Account', new_account_path %>
+
+<% else %>
+<p>sorry, not signed in</p>
+<% end %> 

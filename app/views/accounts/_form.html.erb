@@ -11,29 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nameLstring %>
-    <%= form.text_field :nameLstring %>
+  <div class="form-group">
+    <%= form.label "Account Name" %>
+    <%= form.text_field :nameLstring, autofocus: true, class: "form-control" %>
   </div>
 
 
 
-  <div class="field">
-    <%= form.label :horizon %>
-    <%= form.text_field :horizon %>
+  <div class="form-group">
+    <%= form.label "Horizon" %>
+    <%= form.text_field :horizon, autofocus: true, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :target_exit %>
-    <%= form.text_field :target_exit %>
+  <div class="form-group">
+    <%= form.label "Target Exit" %>
+    <%= form.text_field :target_exit, autofocus: true, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :notes %>
-    <%= form.text_area :notes %>
+  <div class="form-group">
+    <%= form.label "Account Notes" %>
+    <%= form.text_area :notes, autofocus: true, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "Create Account", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -64,6 +64,6 @@ class TransactionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transaction_params
-      params.require(:transaction).permit(:name, :notes)
+      params.require(:transaction).permit(:name, :notes, :account_id, :amount)
     end
 end
