@@ -1,26 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Namelstring:</strong>
-  <%= @account.nameLstring %>
-</p>
-
-
-
-<p>
-  <strong>Horizon:</strong>
-  <%= @account.horizon %>
-</p>
-
-<p>
-  <strong>Target exit:</strong>
-  <%= @account.target_exit %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @account.notes %>
-</p>
-
-<%= link_to 'Edit', edit_account_path(@account) %> |
+<h1><%= @account.nameLstring %></h1><%= link_to 'Edit', edit_account_path(@account) %> |
 <%= link_to 'Back', accounts_path %>
+<p>
+Time Horizon: <%= @account.horizon %>
+</p>
+
+<p>
+Target Exit: <%= @account.target_exit %>
+</p>
+
+<p>Notes: <%= @account.notes %>
+</p>
+
+
+<hr />
+<h4>Balance History</h4>
+<%= line_chart @account.balances.group_by_day(:created_at).sum(:amount) %>
+
+<% @account.balances.each do |balance| %>
+  Balance <%= balance.created_at.to_formatted_s(:short) %> | <%= number_to_currency(balance.amount) %><br/>
+<% end %>
