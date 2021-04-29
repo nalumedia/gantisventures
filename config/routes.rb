@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :balances
   resources :moves
   devise_for :users
   devise_for :views

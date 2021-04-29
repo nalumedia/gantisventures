@@ -6,6 +6,7 @@
 <table class="table">
   <thead>
     <tr>
+    <th>ID</th>
       <th>Namelstring</th>
       <th>Horizon</th>
       <th>Target exit</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @accounts.each do |account| %>
       <tr>
+      <td><%= account.id %></td>
         <td><%= account.nameLstring %></td>
         <td><%= account.horizon %></td>
         <td><%= account.target_exit %></td>
