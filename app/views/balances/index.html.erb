@@ -6,6 +6,7 @@
 <table class="table">
   <thead>
     <tr>
+    <th>Date</th>
       <th>Name</th>
       <th>Account</th>
       <th>Amount</th>
@@ -17,6 +18,8 @@
   <tbody>
     <% @balances.each do |balance| %>
       <tr>
+      
+      <td><%= balance.created_at.to_formatted_s(:short) %></td>
         <td><%= balance.name %></td>
         <td><%= balance.account_id %></td>
         <td><%= number_to_currency(balance.amount) %></td>
@@ -28,10 +31,13 @@
     <% end %>
   </tbody>
 </table>
+<%= link_to 'New Balance', new_balance_path %>
+
+<%= line_chart @balances.group_by_day(:created_at).sum(:amount) %>
 
 <br>
 
-<%= link_to 'New Balance', new_balance_path %>
+
 
 <% else %>
 <p>sorry, not signed in</p>
