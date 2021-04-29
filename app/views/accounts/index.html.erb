@@ -7,7 +7,8 @@
   <thead>
     <tr>
     <th>ID</th>
-      <th>Namelstring</th>
+      <th>Name</th>
+      <th>Balance</th>
       <th>Horizon</th>
       <th>Target exit</th>
       <th>Notes</th>
@@ -20,6 +21,7 @@
       <tr>
       <td><%= account.id %></td>
         <td><%= account.nameLstring %></td>
+        <td><%= number_to_currency(account.balances.last.amount) %></td>
         <td><%= account.horizon %></td>
         <td><%= account.target_exit %></td>
         <td><%= account.notes %></td>
