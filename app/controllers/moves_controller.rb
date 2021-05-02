@@ -17,6 +17,7 @@ class MovesController < ApplicationController
 
   # GET /moves/1/edit
   def edit
+    @accounts = Account.all
   end
 
   # POST /moves or /moves.json
@@ -64,6 +65,6 @@ class MovesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def move_params
-      params.require(:move).permit(:name, :amount, :notes, :account_id)
+      params.require(:move).permit(:name, :amount, :notes, :account_id, :account_from_id)
     end
 end
