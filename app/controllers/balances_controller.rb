@@ -17,6 +17,7 @@ class BalancesController < ApplicationController
 
   # GET /balances/1/edit
   def edit
+    @accounts = Account.all
   end
 
   # POST /balances or /balances.json
