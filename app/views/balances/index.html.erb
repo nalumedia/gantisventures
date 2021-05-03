@@ -35,9 +35,10 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to 'New Balance', new_balance_path %>
 
-<%= line_chart @balances.group_by_day(:created_at).sum(:amount) %>
+<%= link_to 'New Balance', new_balance_path, :class => "btn btn-primary"%>
+
+
 
 <br>
 

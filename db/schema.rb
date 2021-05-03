@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_02_154948) do
+ActiveRecord::Schema.define(version: 2021_05_03_142254) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "nameLstring"
@@ -29,6 +29,36 @@ ActiveRecord::Schema.define(version: 2021_05_02_154948) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "account_id"
     t.index ["account_id"], name: "index_balances_on_account_id"
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.text "notes"
+    t.text "about"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "investments", force: :cascade do |t|
+    t.integer "investment_amount"
+    t.integer "fees"
+    t.text "fee_notes"
+    t.text "terms"
+    t.integer "pre_money"
+    t.integer "post_money"
+    t.integer "target_exit"
+    t.text "target_exit_notes"
+    t.decimal "ownership"
+    t.text "notes"
+    t.integer "source_id"
+    t.string "round"
+    t.string "security_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "company_id"
+    t.index ["company_id"], name: "index_investments_on_company_id"
+    t.index ["source_id"], name: "index_investments_on_source_id"
   end
 
   create_table "moves", force: :cascade do |t|

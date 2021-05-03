@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Investment amount:</strong>
+  <%= @investment.investment_amount %>
+</p>
+
+<p>
+  <strong>Fees:</strong>
+  <%= @investment.fees %>
+</p>
+
+<p>
+  <strong>Fee notes:</strong>
+  <%= @investment.fee_notes %>
+</p>
+
+<p>
+  <strong>Terms:</strong>
+  <%= @investment.terms %>
+</p>
+
+<p>
+  <strong>Pre money:</strong>
+  <%= @investment.pre_money %>
+</p>
+
+<p>
+  <strong>Post money:</strong>
+  <%= @investment.post_money %>
+</p>
+
+<p>
+  <strong>Target exit:</strong>
+  <%= @investment.target_exit %>
+</p>
+
+<p>
+  <strong>Target exit notes:</strong>
+  <%= @investment.target_exit_notes %>
+</p>
+
+<p>
+  <strong>Ownership:</strong>
+  <%= @investment.ownership %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @investment.notes %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @investment.source_id %>
+</p>
+
+<p>
+  <strong>Round:</strong>
+  <%= @investment.round %>
+</p>
+
+<p>
+  <strong>Security type:</strong>
+  <%= @investment.security_type %>
+</p>
+
+<%= link_to 'Edit', edit_investment_path(@investment) %> |
+<%= link_to 'Back', investments_path %>

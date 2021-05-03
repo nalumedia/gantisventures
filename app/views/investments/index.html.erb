@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Investments</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Investment amount</th>
+      <th>Company</th>
+      <th>Fees</th>
+      <th>Fee notes</th>
+      <th>Terms</th>
+      <th>Pre money</th>
+      <th>Post money</th>
+      <th>Target exit</th>
+      <th>Target exit notes</th>
+      <th>Ownership</th>
+      <th>Notes</th>
+      <th>Source</th>
+      <th>Round</th>
+      <th>Security type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @investments.each do |investment| %>
+      <tr>
+        <td><%= investment.investment_amount %></td>
+        <td><%= investment.company.name %></td>
+        <td><%= investment.fees %></td>
+        <td><%= investment.fee_notes %></td>
+        <td><%= investment.terms %></td>
+        <td><%= investment.pre_money %></td>
+        <td><%= investment.post_money %></td>
+        <td><%= investment.target_exit %></td>
+        <td><%= investment.target_exit_notes %></td>
+        <td><%= investment.ownership %></td>
+        <td><%= investment.notes %></td>
+        <td><%= investment.source_id %></td>
+        <td><%= investment.round %></td>
+        <td><%= investment.security_type %></td>
+        <td><%= link_to 'Show', investment %></td>
+        <td><%= link_to 'Edit', edit_investment_path(investment) %></td>
+        <td><%= link_to 'Destroy', investment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'New Investment', new_investment_path, :class => "btn btn-primary"%>
