@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% if user_signed_in? %>
 <h1>Investments</h1>
 
 <table class="table">
@@ -52,3 +52,7 @@
 
 
 <%= link_to 'New Investment', new_investment_path, :class => "btn btn-primary"%>
+
+<% else %>
+<p>sorry, not signed in</p>
+<% end %> 
