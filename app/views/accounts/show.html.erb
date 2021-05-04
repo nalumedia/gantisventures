@@ -13,16 +13,18 @@ Target Exit: <%= @account.target_exit %>
 <p>Notes: <%= @account.notes %>
 </p>
 
-<%= column_chart @account.balances.group_by_day(:created_at).sum(:amount) %>
+
 
 <hr />
 <h4>Balances</h4>
+<%= column_chart @account.balances.group_by_day(:created_at).sum(:amount) %>
 <% @account.balances.each do |balance| %>
   Balance <%= balance.created_at.to_formatted_s(:short) %> | <%= number_to_currency(balance.amount) %><br/>
 <% end %>
 
 <hr />
+<%= column_chart @account.moves.group_by_day(:created_at).sum(:amount) %>
 <h4>Transactions</h4>
 <% @account.moves.each do |move| %>
-  Balance <%= move.created_at.to_formatted_s(:short) %> | <%= number_to_currency(move.amount) %><br/>
+  Transaction:  <%= move.created_at.to_formatted_s(:short) %> | <%= number_to_currency(move.amount) %><br/>
 <% end %>

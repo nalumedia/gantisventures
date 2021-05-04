@@ -2,13 +2,13 @@
 <% if user_signed_in? %>
 
 <h1>Accounts</h1>
-
 <table class="table">
   <thead>
     <tr>
     <th>ID</th>
       <th>Name</th>
       <th>Balance</th>
+      <th>Updated</th>
       <th>Horizon</th>
       <th>Target exit</th>
       <th>Notes</th>
@@ -20,8 +20,9 @@
     <% @accounts.each do |account| %>
       <tr>
       <td><%= account.id %></td>
-        <td><%= account.nameLstring %></td>
+        <td><%= link_to account.nameLstring, account %></td>
         <td><%= number_to_currency(account.balances.last.amount) %></td>
+        <td><%= account.balances.last.created_at.to_formatted_s(:short) %></td>
         <td><%= account.horizon %></td>
         <td><%= account.target_exit %></td>
         <td><%= account.notes %></td>
@@ -36,6 +37,8 @@
 <br>
 
 <%= link_to 'New Account', new_account_path, :class => "btn btn-primary"%>
+
+
 
 <% else %>
 <p>sorry, not signed in</p>

@@ -8,6 +8,7 @@
     <tr>
       <th>Name</th>
       <th>Amount</th>
+      <th>Fees</th>
       <th>Notes</th>
       <th>Account From</th>
       <th>Account To</th>
@@ -20,6 +21,7 @@
       <tr>
         <td><%= move.name %></td>
         <td><%= number_to_currency(move.amount) %></td>
+        <td><%= number_to_currency(move.fees) %></td>
         <td><%= move.notes %></td>
         <td><%= move.account.try(:nameLstring) %></td>
         <td><%= move.account.try(:nameLstring) %></td>

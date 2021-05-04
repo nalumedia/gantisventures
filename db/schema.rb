@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_03_142254) do
+ActiveRecord::Schema.define(version: 2021_05_04_195000) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "nameLstring"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_05_03_142254) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "account_id"
     t.integer "account_from_id"
+    t.integer "fees"
     t.index ["account_from_id"], name: "index_moves_on_account_from_id"
     t.index ["account_id"], name: "index_moves_on_account_id"
   end
@@ -81,6 +82,7 @@ ActiveRecord::Schema.define(version: 2021_05_03_142254) do
     t.integer "account_id"
     t.decimal "amount"
     t.integer "account_from_id"
+    t.integer "fees"
     t.index ["account_from_id"], name: "index_transactions_on_account_from_id"
   end
 
