@@ -2,6 +2,8 @@
 <% if user_signed_in? %>
 <h1>Companies</h1>
 
+<%= link_to 'New Company', new_company_path, :class => "btn btn-primary"%>
+<br /><br />
 <table class="table">
   <thead>
     <tr>
@@ -31,7 +33,6 @@
 <br>
 
 
-<%= link_to 'New Company', new_company_path, :class => "btn btn-primary"%>
 
 
 <% else %>
