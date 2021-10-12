@@ -4,8 +4,9 @@
 <h1>Moves</h1>
 
 <table class="table">
-  <thead>
+<thead class="thead-light">
     <tr>
+      <th>Date</th>
       <th>Name</th>
       <th>Amount</th>
       <th>Fees</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @moves.each do |move| %>
       <tr>
+        <td><%= move.created_at.to_formatted_s(:short) %></td>
         <td><%= move.name %></td>
         <td><%= number_to_currency(move.amount) %></td>
         <td><%= number_to_currency(move.fees) %></td>
